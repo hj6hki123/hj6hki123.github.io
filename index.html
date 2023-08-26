@@ -107,16 +107,19 @@ margin: 0;
         display: none;
     }
 
-    .overlay {
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url(https://api.dujin.org/bing/1366.php);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center 0;
-    }
+   .overlay {
+       z-index: 2;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center 0;
+   }
+   
+   .overlay.loading {
+       background-image: url(https://api.dujin.org/bing/1920.php);
+   }
 
     .text-bg {
         background-color: rgba(255, 255, 255, 0.6);
@@ -160,6 +163,11 @@ loop="loop"></video>
 <img src="https://count.getloli.com/get/@rickroll" style="display: none;">
 </div>
 <script type="text/javascript">
+const overlay = document.getElementById("overlay");
+overlay.classList.add("loading");
+
+
+
 const video = document.getElementById("video");
 const overlay = document.getElementById("overlay");
 const declineButton = document.getElementById("decline-button");
